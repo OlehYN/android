@@ -1,19 +1,15 @@
 package com.example.z1kses.myapplication;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
 
 import java.util.Random;
 
@@ -26,22 +22,45 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button bbr = (Button) findViewById(R.id.button);
+        bbr.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    int x = (int) event.getRawX();
+                    int y = (int) event.getRawY();
+
+                    RelativeLayout lay= (RelativeLayout) findViewById(R.id.rLayout);
+                    int width=lay.getWidth();
+                    int height=lay.getHeight();
+
+                    Random r = new Random();
+                    Button bbl = (Button) findViewById(R.id.button);
+
+                    height -= bbl.getHeight()+lay.getPaddingTop()+lay.getPaddingBottom();
+                    width -= bbl.getWidth()+lay.getPaddingLeft()+lay.getPaddingRight();
+
+                    int newX;
+                    int newY;
+
+                    int i=0;
+
+                    do {
+                        i++;
+
+                        newX = r.nextInt(width)+lay.getPaddingLeft();
+                        newY = r.nextInt(height)+lay.getPaddingTop();
+
+                    }while ((x>newX&&x<(newX+bbl.getWidth()))||(y>newY&&y<(newY+bbl.getHeight())));
+
+                    System.out.println(i);
+
+                    bbl.setX(newX);
+                    bbl.setY(newY);
+                }
+                return true;
             }
         });
-    }
-
-    public void goButtonClicked(View v) {
-        Random r=new Random();
-        int rn=r.nextInt(100);
-        TextView tv=(TextView) findViewById(R.id.textView);
-        tv.setText(String.valueOf(rn));
-
     }
 
     @Override
