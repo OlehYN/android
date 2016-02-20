@@ -1,4 +1,4 @@
-package com.example.z1kses.myapplication;
+package com.example.z1kses.db;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
