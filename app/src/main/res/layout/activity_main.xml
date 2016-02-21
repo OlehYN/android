@@ -1,16 +1,31 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout tools:context=".MainActivity"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/msgTextField"
+        android:id="@+id/textfield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Touch me! You will be awarded!"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Текст, який будемо катувати"
-        tools:context=".MainActivity" />
+        android:layout_marginTop="33dp" />
+
+    <Button
+        android:id="@+id/inc_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press me"
+        android:layout_marginTop="82dp"
+        android:layout_below="@+id/textfield"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
 
 </RelativeLayout>

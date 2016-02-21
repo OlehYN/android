@@ -1,4 +1,4 @@
-package com.example.z1kses.menu;
+package com.example.z1kses.longclick;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
