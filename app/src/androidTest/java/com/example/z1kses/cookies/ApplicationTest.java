@@ -1,4 +1,4 @@
-package com.example.z1kses.longclick;
+package com.example.z1kses.cookies;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

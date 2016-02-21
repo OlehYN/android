@@ -1,4 +1,4 @@
-package com.example.z1kses.longclick;
+package com.example.z1kses.cookies;
 
 import org.junit.Test;
 

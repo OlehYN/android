@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.example.z1kses.longclick"
+        applicationId "com.example.z1kses.cookies"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
