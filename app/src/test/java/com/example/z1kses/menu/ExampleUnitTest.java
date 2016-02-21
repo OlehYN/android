@@ -1,4 +1,4 @@
-package com.example.z1kses.db;
+package com.example.z1kses.menu;
 
 import org.junit.Test;
 
